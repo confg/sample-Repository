@@ -19,3 +19,16 @@ Route::group(['prefix' => 'admin'], function() {
 });
 
 });
+
+//課題３
+//XXXにアクセスが来たら、コントローラーAAAのアクションbbbに渡す設定
+Route::get('XXX', 'AAA@bbb');
+
+
+
+//課題４
+//admin/profile/create にアクセスしたら ProfileController の add Actionに渡す設定
+Route::get('admin/profile/create', 'Admin\ProfileController@add');
+
+//admin/profile/edit にアクセスしたら ProfileController の edit Actionに渡す設定
+Route::get('admin/profile/edit', 'Admin\ProfileController@edit');
