@@ -13,12 +13,13 @@
 
 Route::get('/', function () {
     return view('welcome');
-    
+});
+
 Route::group(['prefix' => 'admin'], function() {
     Route::get('news/create', 'Admin\NewsController@add');
 });
 
-});
+
 
 //課題３
 //XXXにアクセスが来たら、コントローラーAAAのアクションbbbに渡す設定
