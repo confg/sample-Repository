@@ -17,26 +17,11 @@ Route::get('/', function () {
 
 
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
-});
-
-
-
 
 //XXXにアクセスが来たら、コントローラーAAAのアクションbbbに渡す設定
 Route::get('XXX', 'AAA@bbb');
 
 
-
-//課題3  課題4
-//admin/profile/create にアクセスしたら ProfileController の add Actionに渡す設定
-//追記、ログインしていない時にログイン画面にリダイレクトされる
-Route::get('admin/profile/create', 'Admin\ProfileController@add')->middleware('auth');
-
-//admin/profile/edit にアクセスしたら ProfileController の edit Actionに渡す設定
-//追記、ログインしていない時にログイン画面にリダイレクトされる
-Route::get('admin/profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
 
 
 Auth::routes();
@@ -46,8 +31,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('news/create', 'Admin\NewsController@add');
     Route::post('news/create', 'Admin\NewsController@create');
+    
+    Route::get('profile/create', 'Admin\ProfileController@add');
+    Route::get('profile/edit', 'Admin\ProfileController@edit');
+    
+    Route::post('profile/create', 'Admin\ProfileController@create');
+    Route::post('profile/edit', 'Admin/ProfileController@update');
 });
 
-Route::post('admin/profile/create', 'Admin\ProfileController@create');
-
-Route::post('admin/profile/edit', 'Admin/ProfileController@update');
