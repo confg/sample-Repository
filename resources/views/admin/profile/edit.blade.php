@@ -23,8 +23,8 @@
                     <div class="form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <input type="radio" name="gender" value="man" {{ $news_form->gender == 'man' ? 'checked':null }}>男性
-                            <input type="radio" name="gender" value="woman" {{ $news_form->gender == 'woman' ? 'checked':null }}>女性
+                            <input type="radio" name="gender" value="man"{{ $news_form->gender == 'man' ? 'checked':null }}>男性
+                            <input type="radio" name="gender" value="woman"{{ $news_form->gender == 'woman' ? 'checked':null }}>女性
                         </div>
                     </div>
                     <div class="form-group row">
