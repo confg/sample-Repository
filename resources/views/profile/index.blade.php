@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="title">
-            <h1>アイウエオ</h1>
+            <h1>プロフィール一覧</h1>
         </div>
         <hr color="#c0c0c0">
         @if (!is_null($headline))
@@ -69,4 +69,5 @@
             </div>
         </div>
     </div>
+    
 @endsection
